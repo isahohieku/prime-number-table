@@ -33,4 +33,4 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODE_COV }}
-          file: ./coverage/contestify/lcov.info
+          file: ./coverage/prime-numbers/lcov.info
