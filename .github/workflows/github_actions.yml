@@ -1,0 +1,36 @@
+name: Build
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install packages
+        run: npm ci --debug
+      - name: Lint project
+        run: npm run lint
+      - name: Run test and build for production
+        run: npm run build:ci
+      - name: Add test coverage
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODE_COV }}
+          file: ./coverage/contestify/lcov.info

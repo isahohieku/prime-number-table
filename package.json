@@ -1,13 +1,17 @@
 {
   "name": "prime-numbers",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "clean": "rimraf ./dist",
+    "test-headless": "ng test --watch=false --codeCoverage=true --browsers=ChromeHeadlessCustom",
+    "coverage": "ng test -- --no-watch --no-progress --code-coverage",
+    "build:ci": "npm run clean && npm run test-headless && npm run build"
   },
   "private": true,
   "dependencies": {
@@ -20,9 +24,6 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "bootstrap": "^4.5.2",
-    "jquery": "^3.5.1",
-    "ngx-bootstrap-icons": "^1.0.0",
-    "popper.js": "^1.16.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

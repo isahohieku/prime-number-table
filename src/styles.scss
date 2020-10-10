@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: CrashNumbering;
+    src: url(./assets/fonts/CrashNumberingGothic.otf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.text-number, table {
+    font-family: CrashNumbering !important;
+}
+
+html,
+body {
+    background: #414141;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav a.btn {
+    background-color: transparent;
+}
+
+.text-white {
+    color: #ffd9d9 !important;
+}
+
+input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #686868;
+    color: white;
+    font-size: 54px;
+    text-align: center;
+    outline: none;
+}
+
+.btn, .btn:focus, .btn:active {
+    color: #ffd9d9;
+    background-color: #f06e6e;
+    box-shadow: none;
+}
+
+.table {
+    background-color: #f06e6e;
+    font-size: large;
+    th, td {
+        color: #ffd9d9;
+        border-top: 0;
+        border-bottom: 0.5px solid #ffafaf;
+        border-right: 0.5px solid #ffafaf;
+        text-align: center;
+    }
+
+    tr td:last-child {
+        border-right: 0;
+    }
+
+    tr th:last-child {
+        border-right: 0;
+    }
+
+    tr:last-child {
+        td, th {
+            border-bottom: 0;
+        }
+    }
+
+    thead th, tr:first-child th {
+        border-bottom: 0.5px solid #ffafaf;
+    }
+}

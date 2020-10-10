@@ -1,7 +1,53 @@
-Hello World
+<nav class="d-flex align-items-center px-5 mt-5">
+  <h3 class="text-white mx-auto">Prime numbers multiplication table</h3>
+</nav>
 
-<i-bs 
-  name="alarm-fill" 
-  width="2rem" 
-  height="2rem">
-</i-bs>
+<main>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col d-flex align-items-end">
+        <input type="text" class="text-number"
+         inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+          [(ngModel)]="firstNth" name="firstNth" />
+
+          <button type="button" class="btn ml-3" (click)="generateFirstNthPrimeNumbers(firstNth)">Generate</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex align-items-end">
+        <p class="text-white">Enter number to generate</p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col">
+        <h4 class="text-white">Multiplication Table for the first {{ firstNthPrimeNumbers }} prime numbers</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col" *ngFor="let prime of primes">{{prime}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of table; let i = index">
+              <th scope="row">{{primes[i]}}</th>
+              <td *ngFor="let num of item">{{num}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <h5 class="text-white font-weight-light">It took {{ duration }} to generate this table</h5>
+      </div>
+    </div>
+  </div>
+
+</main>
