@@ -1,3 +1,5 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @font-face {
     font-family: CrashNumbering;
     src: url(./assets/fonts/CrashNumberingGothic.otf) format("truetype");
@@ -5,7 +7,6 @@
     font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .text-number, table {
     font-family: CrashNumbering !important;
@@ -14,12 +15,7 @@
 html,
 body {
     background: #414141;
-    height: 100%;
     font-family: 'Montserrat', sans-serif;
-}
-
-nav a.btn {
-    background-color: transparent;
 }
 
 .text-white {

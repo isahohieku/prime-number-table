@@ -11,7 +11,8 @@
     "clean": "rimraf ./dist",
     "test-headless": "ng test --watch=false --codeCoverage=true --browsers=ChromeHeadlessCustom",
     "coverage": "ng test -- --no-watch --no-progress --code-coverage",
-    "build:ci": "npm run clean && npm run test-headless && npm run build"
+    "build:ci": "npm run clean && npm run test-headless && npm run build",
+    "deploy": "ng build --prod --base-href https://isahohieku.github.io/prime-number-table/ && ngh --dir=dist/prime-numbers -no-silent"
   },
   "private": true,
   "dependencies": {
